@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "todoapp-c68f2": {
+      "hosting": {
+        "ng-todo": [
+          "todoapp-c68f2"
+        ]
+      }
+    }
+  }
+}
