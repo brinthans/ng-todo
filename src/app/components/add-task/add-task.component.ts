@@ -33,20 +33,20 @@ export class AddTaskComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    if (!this.text) {
-      alert('Please add a task!');
+    if (!this.text || !this.dayTime) {
+      alert('Please Fill the fields!');
+    } else {
+      const newTask: Task = {
+        text: this.text,
+        day: this.dayTime,
+        reminder: this.reminder
+      }
+  
+      this.onAddTask.emit(newTask);
+  
+      this.text = '';
+      this.dayTime = '';
+      this.reminder = false;
     }
-
-    const newTask: Task = {
-      text: this.text,
-      day: this.dayTime,
-      reminder: this.reminder
-    }
-
-    this.onAddTask.emit(newTask);
-
-    this.text = '';
-    this.dayTime = '';
-    this.reminder = false;
   }
 }
